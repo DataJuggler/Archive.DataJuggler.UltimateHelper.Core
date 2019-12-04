@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>Data Juggler</Company>
+    <Authors>Data Juggler</Authors>
+    <Description>Two updates in this release:
+System.Data.SqlClient was updated to version 4.8.
+Cryptography Helper was updated, and I am afraid will break all passwords stored the old way.
+I am not sure of the impact this will have, if this is a problem you may not want to update.</Description>
+    <Copyright>Data Juggler 2019</Copyright>
+    <Version>1.1.4</Version>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core.git</RepositoryUrl>
+    <RepositoryType>Git Hub</RepositoryType>
+    <PackageTags>C# Helper Classes</PackageTags>
+    <PackageReleaseNotes>I included ListHelper.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="License\License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Delegates\" />
+  </ItemGroup>
+
+</Project>
