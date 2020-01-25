@@ -5,9 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Data Juggler</Company>
     <Authors>Data Juggler</Authors>
-    <Description>
-
-Version 1.1.7: I moved the class XmlPatternHelper into this library since I worked on it for .Net Framework version of this class.
+    <Description>Version 1.1.7: I moved the class XmlPatternHelper into this library since I worked on it for .Net Framework version of this class.
 
 I added a new method to ListHelper:
 
