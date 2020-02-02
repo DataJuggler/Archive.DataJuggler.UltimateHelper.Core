@@ -1,31 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netstandard2.1;netcoreapp3.1</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Data Juggler</Company>
     <Authors>Data Juggler</Authors>
-    <Description>Version 1.1.7: I moved the class XmlPatternHelper into this library since I worked on it for .Net Framework version of this class.
-
-I added a new method to ListHelper:
-
-HasXOrMoreItems.
-
-Usage: if (ListHelper.HasXOrMoreItems(list, 3))
-
-If the above method returns true, you have verified the list exists, and you can safely refer to item number 3:
-
-list[2].</Description>
+    <Description>
+      This is a port of DataJuggler.UltimateHelper.Core for .Net Framework.
+    </Description>
     <Copyright>Data Juggler 2019</Copyright>
-    <Version>1.1.7</Version>
+    <Version>1.2.0</Version>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core.git</RepositoryUrl>
     <RepositoryType>Git Hub</RepositoryType>
     <PackageTags>C# Helper Classes</PackageTags>
-    <PackageReleaseNotes>I included ListHelper.</PackageReleaseNotes>
-  </PropertyGroup>
+    <PackageReleaseNotes>Version 1.2.0 This is my first attempt at Multi-Targeting so this application is availaable to .Net Core 3.1 and .Net Standard 2.1.
 
+</PackageReleaseNotes>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
   </ItemGroup>
