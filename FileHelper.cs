@@ -77,7 +77,7 @@ namespace DataJuggler.UltimateHelper.Core
                     FileInfo fileInfo = new FileInfo(sourceFileName);
 
                     // Get the index of the period
-                    int index = fileInfo.Name.LastIndexOf(".");
+                    int index = fileInfo.Name.IndexOf(".");
 
                     // get the name
                     string name = fileInfo.Name.Substring(0, index);

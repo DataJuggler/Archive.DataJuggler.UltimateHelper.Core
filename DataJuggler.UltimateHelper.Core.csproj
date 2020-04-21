@@ -9,13 +9,15 @@
       This is a port of DataJuggler.UltimateHelper.Core for .Net Framework.
     </Description>
     <Copyright>Data Juggler 2019</Copyright>
-    <Version>1.2.2</Version>
+    <Version>1.2.3</Version>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core.git</RepositoryUrl>
     <RepositoryType>Git Hub</RepositoryType>
     <PackageTags>C# Helper Classes</PackageTags>
-    <PackageReleaseNotes>Version 1.2.2 - I added a new method to FileHelper, CreateFileName with PartialGuid.
+    <PackageReleaseNotes>Version 1.2.3 - I accidently had LastIndexOf instead of Index of when I created a new file name in CreateFileNameWithPartialGuid method.
+
+Version 1.2.2 - I added a new method to FileHelper, CreateFileName with PartialGuid.
 
 Version 1.2.1
 I brought over WordParser.cs.
