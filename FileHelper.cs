@@ -61,6 +61,44 @@ namespace DataJuggler.UltimateHelper.Core
                 return files;
             }
             #endregion
+
+            #region CreateFileNameWithPartialGuid(string sourceFileName)
+            /// <summary>
+            /// This method appends a partial Guid to a filename
+            /// </summary>
+            public static string CreateFileNameWithPartialGuid(string sourceFileName)
+            {
+                // initial value
+                string newPath = "";
+
+                if (TextHelper.Exists(sourceFileName))
+                {
+                    // Get a fileInfo of the oldPath
+                    FileInfo fileInfo = new FileInfo(sourceFileName);
+
+                    // Get the index of the period
+                    int index = fileInfo.Name.LastIndexOf(".");
+
+                    // get the name
+                    string name = fileInfo.Name.Substring(0, index);
+
+                    // Get the directory
+                    DirectoryInfo directory = fileInfo.Directory;
+
+                    // get the directoryFullname
+                    string fullPath = directory.FullName;
+
+                    // newFileName
+                    string newFileName = name + "." + Guid.NewGuid().ToString().Substring(0, 12) + ".png";
+
+                    // Get the newPath
+                    newPath = Path.Combine(fullPath, newFileName);
+                }
+
+                // return value
+                return newPath;
+            }
+            #endregion
             
             #region GetFileNameWithoutExtensionEx(string fullName, ref string extension)
             /// <summary>
