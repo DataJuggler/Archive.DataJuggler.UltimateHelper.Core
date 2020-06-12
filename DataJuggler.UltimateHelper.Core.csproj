@@ -9,13 +9,21 @@
       This is a port of DataJuggler.UltimateHelper.Core for .Net Framework.
     </Description>
     <Copyright>Data Juggler 2019</Copyright>
-    <Version>1.2.4</Version>
+    <Version>1.2.5</Version>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.UltimateHelper.Core.git</RepositoryUrl>
     <RepositoryType>Git Hub</RepositoryType>
     <PackageTags>C# Helper Classes</PackageTags>
-    <PackageReleaseNotes>Version 1.2.4 - I added a 5th parameter override to NullHelper.Exists and NullHelper.IsNull
+    <PackageReleaseNotes>Version 1.2.5 - I changed NumericHelper.IsNumeric to include 3 new optional parameters.
+bool RemoveDash, true by default. - numbers are removed for this test.
+double defaultValue, -2,000,000 default value.
+double errorValue, -2,000,001 default value.
+
+If the number parses to greater than, it is numeric.
+My old way didn't work for negative numbers, and I need them now.
+
+Version 1.2.4 - I added a 5th parameter override to NullHelper.Exists and NullHelper.IsNull
 
 Version 1.2.3 - I accidently had LastIndexOf instead of Index of when I created a new file name in CreateFileNameWithPartialGuid method.
 
@@ -27,7 +35,7 @@ I brought over WordParser.cs.
 Version 1.2.0 This is my first attempt at Multi-Targeting so this application is availaable to .Net Core 3.1 and .Net Standard 2.1.
 
 </PackageReleaseNotes>
-    <AssemblyVersion>1.2.4.0</AssemblyVersion>
+    <AssemblyVersion>1.2.5.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />

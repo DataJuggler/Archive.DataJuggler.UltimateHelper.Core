@@ -173,13 +173,13 @@ namespace DataJuggler.UltimateHelper.Core
             }
             #endregion
 
-            #region IsNumeric(string source, bool removeCommas = true)
+            #region IsNumeric(string source, bool removeCommas = true, bool removeDash = true, double defaultValue = -2000000, double errorValue = -2000001)
             /// <summary>
             /// Can this text be parsed to a number
             /// </summary>
             /// <param name="s"></param>
             /// <returns></returns>
-            public static bool IsNumeric(string source, bool removeCommas = true)
+            public static bool IsNumeric(string source, bool removeCommas = true, bool removeDash = true, double defaultValue = -2000000, double errorValue = -2000001)
             {
                 // initial value
                 bool isNumeric = false;
@@ -188,7 +188,7 @@ namespace DataJuggler.UltimateHelper.Core
                 string text = source;
 
                 // If the source string exists
-                if (TextHelper.Exists(source))
+                if (TextHelper.Exists(text))
                 {
                     // if the value for removeCommas is true
                     if (removeCommas)
@@ -197,27 +197,30 @@ namespace DataJuggler.UltimateHelper.Core
                         text = source.Replace(",", "");
                     }
 
-                    // text one more time to make sure this has text
-                    if (TextHelper.Exists(text))
+                    // if removeDash is true
+                    if (removeDash)
                     {
-                        // default to true at this point
-                        isNumeric = true;
+                        // get the text
+                        text = text.Replace("-", "");
+                    }
 
-                        // Iterate the collection of char objects
-                        foreach (char c in text)
-                        {
-                            // if this char is not a number
-                            if (!Char.IsNumber(c))
-                            {
-                                // set to false
-                                isNumeric = false;
+                    // Get the value
+                    int value = ParseInteger(text, (int) defaultValue, (int) errorValue);
 
-                                // break out of the loop
-                                break;
-                            }
-                        }
+                    // set the return value
+                    isNumeric = (value > defaultValue);
+
+                    // if not true
+                    if (!isNumeric)
+                    {   
+                        // attempt to parse 2
+                        double value2 = ParseDouble(text, defaultValue, errorValue);
+
+                        // set the return value
+                        isNumeric = (value2 > defaultValue);
                     }
                 }
+                
 
                 // return value
                 return isNumeric;
