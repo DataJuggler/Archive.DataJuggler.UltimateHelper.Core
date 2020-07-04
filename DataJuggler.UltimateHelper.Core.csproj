@@ -36,7 +36,15 @@ Version 1.2.0 This is my first attempt at Multi-Targeting so this application is
 
 </PackageReleaseNotes>
     <AssemblyVersion>1.2.5.0</AssemblyVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
   </ItemGroup>
